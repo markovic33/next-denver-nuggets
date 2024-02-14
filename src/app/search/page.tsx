@@ -41,12 +41,7 @@ export default async function SearchPage({
       ))}
 
       {tickets.map((ticket) => (
-        <div className="flex flex-col justify-center items-center">
-          <h1 className="font-semibold text-lg mb-2 uppercase">
-            Buy ticket for game
-          </h1>
-          <GameCard team={ticket} key={ticket.id} />
-        </div>
+        <GameCard team={ticket} key={ticket.id} />
       ))}
     </div>
   );
