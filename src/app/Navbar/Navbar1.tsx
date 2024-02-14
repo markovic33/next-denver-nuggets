@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 import { getTicketCart } from "@/lib/ticket";
 import UserMenuButton from "./UserMenuButton";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import authOptions from "../api/auth/[...nextauth]/options";
 
 async function searchProduct(formData: FormData) {
   "use server";
