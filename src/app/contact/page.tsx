@@ -4,11 +4,10 @@
 import Head from "next/head";
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import { GoogleMapsWrapper } from "@/components/GoogleMapsWrapper";
+import { GoogleMaps } from "@/components/GoogleMaps";
 
 // Dynamic import for GoogleMap component to avoid SSR
-const DynamicGoogleMap = dynamic(() => import("../../components/GoogleMap"), {
-  ssr: false,
-});
 
 const ContactPage: React.FC = () => {
   // Define state for map visibility
@@ -28,7 +27,7 @@ const ContactPage: React.FC = () => {
           content="Contact Denver Nuggets basketball team"
         />
       </Head>
-      <div className="grid grid-cols-2 gap-8 mb-10">
+      <div className=" flex flex-col justify-center  md:grid md:grid-cols-2 md:gap-8 md:mb-10 ">
         {/* Contact information */}
         <div>
           <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
@@ -43,18 +42,10 @@ const ContactPage: React.FC = () => {
           </ul>
         </div>
         {/* Map */}
-        <div>
-          <button
-            onClick={toggleMap}
-            className="text-blue-500 font-semibold mb-4 focus:outline-none"
-          >
-            {showMap ? "Hide Map" : "Show Map"}
-          </button>
-          {showMap && (
-            <div className="h-96 bg-gray-200 rounded-md mb-5">
-              <DynamicGoogleMap />
-            </div>
-          )}
+        <div className="max-w-[200px] ">
+          <GoogleMapsWrapper>
+            <GoogleMaps />
+          </GoogleMapsWrapper>
         </div>
       </div>
     </div>
