@@ -15,7 +15,7 @@ export default function AddToCartButton({
   const [success, setSuccess] = useState(false);
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 sr-only">
       <button
         className="btn rounded-lg flex gap-3 bg-yellow-400 p-3 mt-3"
         onClick={() => {
@@ -42,7 +42,7 @@ export default function AddToCartButton({
           />
         </svg>
       </button>
-      {isPending && <span className="sr-only" />}
+      {isPending && <span className="loading loading-spinner" />}
       {!isPending && success && (
         <span className="text-green-500 block">Added to cart.</span>
       )}
