@@ -1,3 +1,4 @@
+import { Award, Trophy } from "lucide-react";
 import Image from "next/image";
 
 export default function History() {
@@ -17,7 +18,7 @@ export default function History() {
           />
         </div>
         <div className="w-full lg:w-1/2">
-          🏀 Founded in 1967
+          <Award className="text-orange-400" /> Founded in 1967
           <br />- The Denver Nuggets have etched their name in the annals of
           basketball history with a rich legacy of passion, resilience, and
           unforgettable moments.
@@ -52,7 +53,8 @@ export default function History() {
           on the rich history of the Denver Nuggets, we celebrate the
           milestones, legends, and the exciting journey that lies ahead. Here's
           to many more years of thrilling basketball and Mile High Pride! <br />
-          🏆 #DenverNuggets #MileHighPride #NBAHistory #BasketballLegacy
+          <Trophy className="text-yellow-300" /> #DenverNuggets #MileHighPride
+          #NBAHistory #BasketballLegacy
         </div>
       </div>
     </div>
